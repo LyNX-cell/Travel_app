@@ -4,7 +4,7 @@
 to help complete your journey and make Colorful.
 </p>
 
-![Demo APP](/asset/app/App.png "Demo APP")
+![Demo APP](/asset/app/App Update.png "Demo APP")
 
 
 Desain By Arif Septio
