@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:onshop/themes/app_theme.dart';
+import 'package:onshop/widget/background.dart';
+import 'package:onshop/widget/button_utama.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image:
-                AssetImage("asset/Pic/pascal-bullan-ZS2YDwGsGKA-unsplash.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
+    return Background(
+        color: Colors.transparent,
+        asset: "asset/Pic/pascal-bullan-ZS2YDwGsGKA-unsplash.jpg",
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: Padding(
@@ -73,28 +69,7 @@ class WelcomePage extends StatelessWidget {
                         ),
                         Column(
                           children: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                shadowColor: Colors.transparent,
-                                elevation: 0,
-                                minimumSize: const Size(276, 70),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                primary: const Color(
-                                  0xF25D5A47,
-                                ),
-                              ),
-                              onPressed: () {},
-                              child: const Text(
-                                "Create Account",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: kBoldWeight,
-                                ),
-                              ),
-                            ),
+                            const ButtonUtama(),
                             const SizedBox(
                               height: 10,
                             ),
@@ -126,8 +101,6 @@ class WelcomePage extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
