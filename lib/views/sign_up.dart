@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:onshop/views/sign_up.dart';
 import 'package:onshop/widget/background.dart';
 import 'package:onshop/widget/bottom_text.dart';
 import 'package:onshop/widget/button_log.dart';
@@ -8,8 +7,8 @@ import 'package:onshop/widget/logo.dart';
 import 'package:onshop/widget/text_login.dart';
 import 'package:page_transition/page_transition.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,23 +27,26 @@ class LoginPage extends StatelessWidget {
                 height: 20,
               ),
               const TextLogin(
-                  text1: "Welcome back,\n     Adventurer",
-                  text2: "You have been Missed"),
+                  text1: "Welcome new,\n     Adventurer",
+                  text2: "Your Jorney Start Here "),
               const FormU(
                 text1: 'Username',
               ),
               const FormU(
                 text1: 'Password',
               ),
+              const FormU(
+                text1: 'Password',
+              ),
               const ButtonLog(
-                text1: 'Login',
+                text1: 'Sign Up',
               ),
               const SizedBox(
-                height: 181,
+                height: 75,
               ),
               BottomText(
-                text1: "Not Have account yet ?",
-                text2: "Sign Up",
+                text1: "Already Have Account ?",
+                text2: "Sign In",
                 press: () {
                   Navigator.push(
                     context,

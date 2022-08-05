@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:onshop/themes/app_theme.dart';
+import 'package:onshop/views/loginpage.dart';
 import 'package:onshop/widget/background.dart';
+import 'package:onshop/widget/bottom_text.dart';
 import 'package:onshop/widget/button_utama.dart';
+import 'package:onshop/widget/logo.dart';
+import 'package:onshop/widget/text_login.dart';
+import 'package:page_transition/page_transition.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -18,15 +22,7 @@ class WelcomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Center(
-                  child: Text(
-                    "JELAJH",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
+                const Logo(),
                 Container(
                   decoration: const BoxDecoration(
                     color: Color(
@@ -39,58 +35,37 @@ class WelcomePage extends StatelessWidget {
                   height: 353,
                   width: 355,
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(33, 37, 33, 37),
+                    padding: const EdgeInsets.fromLTRB(33, 62, 33, 37),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          children: const [
-                            Text(
-                              "Explore World in Here",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 22,
-                                fontWeight: kBoldWeight,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              "find your way to explore the world with \n this application can make \n your trip more colorful",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: kMediumWeight,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
+                        const TextLogin(
+                          text1: 'Explore World in Here',
+                          text2:
+                              'find your way to explore the world \n with this application can make \n your trip more colorful',
                         ),
                         Column(
                           children: [
-                            const ButtonUtama(),
+                            const ButtonUtama(
+                              title: "Let’s Get Started ",
+                              icon: Icons.arrow_forward_outlined,
+                            ),
                             const SizedBox(
                               height: 10,
                             ),
-                            RichText(
-                              text: const TextSpan(
-                                style: TextStyle(
-                                  fontSize: 15,
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: "Already Have account?",
+                            BottomText(
+                              text2: 'Sign In',
+                              text1: 'Already Have account ?',
+                              press: () {
+                                Navigator.push(
+                                  context,
+                                  PageTransition(
+                                    duration: const Duration(milliseconds: 350),
+                                    type: PageTransitionType.rightToLeft,
+                                    child: const LoginPage(),
                                   ),
-                                  TextSpan(
-                                    style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: kBoldWeight,
-                                    ),
-                                    text: "Sign In",
-                                  )
-                                ],
-                              ),
+                                );
+                              },
                             ),
                           ],
                         )
